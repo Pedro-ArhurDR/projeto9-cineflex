@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Tela3b from "./Tela3b";
 
 export default function Tela3(props){
-    const {setDados} = props
+    const [dados,setDados] = React.useState(props)
     const [cadeiras , setCadeiras] = React.useState([])
     const [sessao1,setSessao1] = React.useState([])
     const [sessao2,setSessao2] = React.useState([])
@@ -29,15 +29,14 @@ export default function Tela3(props){
     const[registro, setRegistro] = React.useState('')
     const[num_assentos_Reserv, setNum_assentos_Reserv] = React.useState([])
 
-    function Reservar(element){
+    function reservar(element){
         element.preventDefault();
         setDados({
             movie:`${sessao1.title}`,
             date:`${sessao2.date} - ${sessao3.name}`,
             seats:`${num_assentos_Reserv}`,
             comprador:`${nome}`,
-            CPFcomprador:`${registro}`
-        })
+            CPFcomprador:`${registro}`})
     
         let postar = {
             ids:`${assentos_Reserv}`,
@@ -90,7 +89,7 @@ export default function Tela3(props){
                 Indisponível
             </div>
           </div>
-          <form onSubmit={i => Reservar(i)}>
+          <form onSubmit={i => reservar(i)}>
           <div className="inserir">
                     <p>Nome do comprador:</p>
                     <input type="text" placeholder="   Digite seu nome..." onChange={i => setNome(i.target.value)} value={nome} required></input>
@@ -102,10 +101,10 @@ export default function Tela3(props){
                 <button type="submit" className="botao">Reservar assentos</button>
           </form>
           <div className="barrainf">
-                    <img src={sessao1.posterURL} alt="coverpage" />
+                <img src={sessao1.posterURL} alt="coverpage" />
                 <div>
-                    <p>{sessao1.title}</p>
-                    <p>{sessao2.weekday} - {sessao3.name}</p>
+                <p>{sessao1.title}</p>
+                <p>{sessao2.weekday} - {sessao3.name}</p>
                 </div>
           </div>
           </div>

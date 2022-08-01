@@ -16,7 +16,7 @@ export default function Tela1(){
     return(
         <>
           <div className="container"> 
-          <div className="topo2">Selecione  filme</div>
+          <div className="topo2">Selecione o filme</div>
           <div className="Filmes">
           {filmes.map(element => <Filme key={element.id} ID={element.id} URL={element.posterURL}/>)}
           </div>

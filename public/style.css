@@ -43,7 +43,7 @@
         position: relative;
         margin-bottom: 10px;
     }
-    img{
+    .basefilme > img{
         width: 129px;
         height: 193px;
         position:absolute;
@@ -53,6 +53,45 @@
         grid-template-columns: repeat(2, auto);
         justify-content: space-evenly;
         align-items: center;
+    }
+    .sessao{
+        background-color: #E8833A;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 83px;
+        height: 43px;
+        border-radius: 5px;
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+    .sessoes{
+        display: flex;
+    }
+    .horarios{
+        border-bottom: #9EADBA solid;
+    }
+    .row{
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    .horario{
+        margin-left: 10px;
+    }
+    .barrainf{
+        display: flex;
+        background-color: #9EADBA;
+        height: 133px;
+        align-items: center;
+        padding: 15px;
+        font-size: 25px;
+    }
+    .barrainf > img{
+        width: 52px;
+        height: 76px;
+        margin-right:10px;
+
     }
 
 

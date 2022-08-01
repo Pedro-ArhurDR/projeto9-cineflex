@@ -85,7 +85,7 @@
     .barrainf{
         display: flex;
         background-color: #9EADBA;
-        height: 133px;
+        height: 150px;
         align-items: center;
         padding: 15px;
         font-size: 25px;
@@ -94,8 +94,51 @@
         width: 52px;
         height: 76px;
         margin-right:10px;
-
+        left: 0;
+        bottom: 0;
     }
+    .opcoes{
+        display: flex;
+    }
+    .disponivel, .indisponivel, .selecionado{
+        width:25px;
+        height: 25px;
+        border-radius: 17px;
+        cursor: pointer;
+    }
+    .disponivel{
+        background-color: #7B8B99;
+    }
+    .indisponivel{
+        background-color: #FBE192;
+    }
+    .selecionado{
+        background-color: #1AAE9E;
+    }
+    .opcao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .assentos{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom:50px;
+        }
+    .inserir{
+        margin-bottom: 20px;
+    }
+    .assentos > div{
+        margin: 15px 15px;
+    }
+
+    
 
 
 }

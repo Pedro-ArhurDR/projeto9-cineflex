@@ -15,6 +15,7 @@ export default function Tela3(props){
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`)
+        console.log(promise,'assunteos')
     promise.then(resposta =>{
         setCadeiras(resposta.data.seats)
         setSessao1(resposta.data.movie)
@@ -69,12 +70,43 @@ export default function Tela3(props){
             {cadeiras.map(itens => <Tela3b
 
             key={itens.id} id={itens.id} isAvailable={itens.isAvailable} 
-            nome={itens.name} assentos_Reserv={assentos_Reserv} 
+            name={itens.name} assentos_Reserv={assentos_Reserv} 
             setAssentos_Reserv={setAssentos_Reserv} num_assentos_Reserv={num_assentos_Reserv} 
             setNum_assentos_Reserv={setNum_assentos_Reserv}/>)}
 
           </div>
+
+          <div className="opcoes">
+            <div className="opcao">
+                <div className="selecionado"></div>
+                Selecionado
+            </div>
+            <div className="opcao">
+                <div className="disponivel"></div>
+                Disponível
+            </div>
+            <div className="opcao">
+                <div className="indisponivel"></div>
+                Indisponível
+            </div>
+          </div>
+          <form onSubmit={i => Reservar(i)}>
+          <div className="inserir">
+                    <p>Nome do comprador:</p>
+                    <input type="text" placeholder="   Digite seu nome..." onChange={i => setNome(i.target.value)} value={nome} required></input>
+                </div>
+                <div className="inserir">
+                    <p>CPF do comprador:</p>
+                    <input type="text" placeholder="   Digite seu CPF..." onChange={i => setRegistro(i.target.value)} value={registro} required></input>
+                </div>
+                <button type="submit" className="botao">Reservar assentos</button>
+          </form>
           <div className="barrainf">
+                    <img src={sessao1.posterURL} alt="coverpage" />
+                <div>
+                    <p>{sessao1.title}</p>
+                    <p>{sessao2.weekday} - {sessao3.name}</p>
+                </div>
           </div>
           </div>
         </>
